@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package doug.storewebap.servlets;
+package doug.storewebapp.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -38,6 +38,10 @@ public class StoreServlet extends HttpServlet {
             String strName=request.getParameter("name");
             String strPrice=request.getParameter("price");
             String strQuantity=request.getParameter("quantity");
+            
+            int iPrice =Integer.parseInt(strPrice);
+            int iQuantity=Integer.parseInt(strQuantity);
+            int iCost= iPrice*iQuantity;
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
